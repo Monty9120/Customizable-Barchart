@@ -86,12 +86,16 @@ function makeChart (data, options) {
 
 	dataBars.on('mouseover',function(d){
 		tooltipText.text(d.x + ' : '+ d.y);
-		tooltip.attr('opacity',1);
+		tooltip.transition()
+				.duration(500)
+				.attr('opacity',1);
 	});
 
 	dataBars.on('mouseout',function(d){
 
-		tooltip.attr('opacity',0);
+		tooltip.transition()
+				.duration(500)
+				.attr('opacity',0);
 	});
 			
 	dataBars.on('mousemove',function(){
